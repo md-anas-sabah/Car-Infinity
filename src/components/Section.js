@@ -1,5 +1,6 @@
 import React from "react";
 import styledComponents from "styled-components";
+import Fade from "react-reveal/Fade";
 
 function Section({
   title,
@@ -10,16 +11,19 @@ function Section({
 }) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1 className="h1">{title}</h1>
-        <p>{description}</p>
-      </ItemText>
-
+      <Fade bottom>
+        <ItemText>
+          <h1 className="h1">{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
       <Button>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{leftBtnText}</LeftButton>
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src="./images/down-arrow.svg" />
       </Button>
     </Wrap>
@@ -28,19 +32,18 @@ function Section({
 
 export default Section;
 
-const Wrap = styledComponents.div`                      
-//  background-image: url('./images/model-s.jpg');
- background-image: ${(props) => `url("/images/${props.bgImage}")`};
- height:100vh;
- width:100vw;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- display: flex;
- flex-direction: column;
-//  gap: 25rem;
-justify-content: space-between;
-align-items: center;
+const Wrap = styledComponents.div`                       
+    height:100vh;
+    width:100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    //  gap: 25rem;
+    justify-content: space-between;
+    align-items: center;
+    background-image: ${(props) => `url("/images/${props.bgImage}")`};
 
 `;
 

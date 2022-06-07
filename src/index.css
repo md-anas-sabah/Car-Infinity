@@ -9,6 +9,9 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+a {
+  text-decoration: none;
+}
 @keyframes animateDown {
   0%,
   20%,
@@ -25,4 +28,6 @@ body {
     transform: translateY(3px);
   }
 }
-
+.container::-webkit-scrollbar {
+  display: none;
+}
