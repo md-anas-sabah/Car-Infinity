@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styledComponents from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { Button } from "@mui/material";
 import { selectCars } from "../features/car/carSlice";
 import { useSelector } from "react-redux";
@@ -29,7 +30,10 @@ function Header() {
       </Menu>
 
       <RightMenu>
-        <a href="./">Shop</a>
+        <a href="./">
+          Offers <LocalOfferIcon />
+        </a>
+
         <a href="#">Car-Infinity Account</a>
         <CustomMenu onClick={() => setOpen(true)} />
       </RightMenu>
@@ -123,7 +127,9 @@ const RightMenu = styledComponents.div`
     justify-content: center;
     align-items:center;
 
-    a{
+    a{  
+        display:flex;
+        align-items:center;
         font-weight:600;
         text-transform: uppercase;
         margin-right: 30px;
