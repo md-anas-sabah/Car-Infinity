@@ -35,8 +35,9 @@ function Header() {
         </a>
 
         <a href="#">Car-Infinity Account</a>
-        <CustomMenu onClick={() => setOpen(true)} />
+        {/* <CustomMenu onClick={() => setOpen(true)} /> */}
       </RightMenu>
+      <CustomMenu onClick={() => setOpen(true)} />
       <BurgerNav className="container" show={open}>
         <CloseWrapper>
           <CustomClose onClick={() => setOpen(false)} />
@@ -135,12 +136,16 @@ const RightMenu = styledComponents.div`
         margin-right: 30px;
         letter-spacing:2px;
     }
+    @media(max-width:780px){
+      display:none;
+    }
 `;
 
 const CustomMenu = styledComponents(MenuIcon)`
     margin-right:19px;
     margin-left: -20px;
     cursor: pointer;
+    margin-top: 48px;
 `;
 
 const BurgerNav = styledComponents.div`
